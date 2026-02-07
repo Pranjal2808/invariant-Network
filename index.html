@@ -40,19 +40,24 @@ margin:0 auto;
 padding:64px 22px;
 }
 
+/* LOGO */
+
+.logo-container{
+text-align:center;
+margin-bottom:28px;
+padding-top:20px;
+}
+
+.logo-svg{
+max-width:280px;
+height:auto;
+}
+
 /* HEADER */
 
 header{
 text-align:center;
 margin-bottom:48px;
-}
-
-/* ✅ LOGO */
-
-.logo{
-width:140px;
-margin-bottom:18px;
-opacity:.95;
 }
 
 h1{
@@ -207,8 +212,8 @@ opacity:.6;
 
 @media(max-width:600px){
 
-.logo{
-width:110px;
+.logo-svg{
+max-width:240px;
 }
 
 h1{
@@ -232,13 +237,20 @@ height:1850px;
 
 <main class="container">
 
+<!-- LOGO -->
+<div class="logo-container">
+<svg class="logo-svg" width="280" height="70" viewBox="0 0 280 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<!-- Monogram -->
+<rect x="0" y="10" width="6" height="50" fill="#ffffff"/>
+<path d="M 20 10 L 20 60 M 20 10 L 50 60 M 50 10 L 50 60" stroke="#ffffff" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter"/>
+
+<!-- Text -->
+<text x="70" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#ffffff" letter-spacing="-0.02em">INVARIANT</text>
+<text x="70" y="57" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#666" letter-spacing="0.08em">NETWORK</text>
+</svg>
+</div>
+
 <header>
-
-<!-- ✅ YOUR LOGO -->
-<img src="logo.png" alt="Invariant Network Logo" class="logo">
-
-<h1>Invariant Network</h1>
-
 <p class="subtitle">
 A selective network for quantitative talent spanning financial risk, quant finance, data science, and advanced analytics, partnering with organisations that value depth, rigor, and long-term alignment.
 </p>
@@ -282,7 +294,7 @@ Employer Requirements
 <h2>Candidate Application</h2>
 
 <p style="color:var(--muted);">
-Short screening form. Serious applications only.
+Application for quantitative professionals. Reviewed carefully — we reach out when there's strong alignment.
 </p>
 
 <button onclick="showCandidateForm(this)" class="cta">
@@ -305,7 +317,7 @@ Proceed to Application
 <h2>Employer Requirements</h2>
 
 <p style="color:var(--muted);">
-Submit hiring mandates for quantitative and analytical roles.
+For hiring teams seeking quantitative talent. Describe your requirements below.
 </p>
 
 <button onclick="showEmployerForm(this)" class="cta">
@@ -320,6 +332,8 @@ Proceed to Employer Form
 
 </section>
 
+
+<!-- CONTACT SECTION -->
 
 <section class="contact">
 
@@ -345,7 +359,7 @@ We respond to all inquiries promptly
 
 
 <footer>
-© 2025 Invariant Network · Independent initiative · Confidential submissions
+© 2026 Invariant Network · Independent initiative · Confidential submissions
 </footer>
 
 </main>
