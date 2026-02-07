@@ -47,6 +47,14 @@ text-align:center;
 margin-bottom:48px;
 }
 
+/* ✅ LOGO */
+
+.logo{
+width:140px;
+margin-bottom:18px;
+opacity:.95;
+}
+
 h1{
 font-size:2.7rem;
 letter-spacing:-0.04em;
@@ -153,11 +161,43 @@ border:none;
 margin-top:28px;
 }
 
+/* CONTACT */
+
+.contact{
+max-width:700px;
+margin:60px auto 20px;
+padding:28px;
+background:linear-gradient(180deg,#151518,#111113);
+border:1px solid var(--border);
+border-radius:16px;
+text-align:center;
+}
+
+.contact h2{
+margin-bottom:12px;
+letter-spacing:-0.02em;
+}
+
+.contact p{
+color:var(--muted);
+margin:6px 0;
+}
+
+.contact a{
+color:var(--text);
+text-decoration:none;
+font-weight:500;
+}
+
+.contact a:hover{
+text-decoration:underline;
+}
+
 /* FOOTER */
 
 footer{
 text-align:center;
-margin-top:70px;
+margin-top:40px;
 font-size:.8rem;
 color:var(--muted);
 opacity:.6;
@@ -166,6 +206,10 @@ opacity:.6;
 /* MOBILE */
 
 @media(max-width:600px){
+
+.logo{
+width:110px;
+}
 
 h1{
 font-size:2.15rem;
@@ -189,6 +233,10 @@ height:1850px;
 <main class="container">
 
 <header>
+
+<!-- ✅ YOUR LOGO -->
+<img src="logo.png" alt="Invariant Network Logo" class="logo">
+
 <h1>Invariant Network</h1>
 
 <p class="subtitle">
@@ -227,8 +275,6 @@ Employer Requirements
 </div>
 
 
-<!-- Candidate -->
-
 <section id="candidate" class="panel active">
 
 <div style="max-width:640px;margin:0 auto;text-align:center;">
@@ -252,8 +298,6 @@ Proceed to Application
 </section>
 
 
-<!-- Employer -->
-
 <section id="employer" class="panel">
 
 <div style="max-width:640px;margin:0 auto;text-align:center;">
@@ -273,6 +317,29 @@ Proceed to Employer Form
 <div id="employerForm" style="display:none;">
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf--7aWAbAvm6ZQk0BxGOTpv21jbwYuticnTP6ljrtu6mrgYg/viewform?embedded=true"></iframe>
 </div>
+
+</section>
+
+
+<section class="contact">
+
+<h2>Contact</h2>
+
+<p>Email:  
+<a href="mailto:contact@invariantnetwork.com">
+contact@invariantnetwork.com
+</a>
+</p>
+
+<p>Phone:  
+<a href="tel:+918976309787">
++91 8976309787
+</a>
+</p>
+
+<p style="margin-top:10px;">
+We respond to all inquiries promptly
+</p>
 
 </section>
 
