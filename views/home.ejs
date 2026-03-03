@@ -164,6 +164,68 @@
       transform:translateY(-2px);
     }
 
+    .alert{
+      max-width:700px;
+      margin:0 auto 18px;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font-size:.95rem;
+    }
+
+    .alert.success{
+      border-color:#25593a;
+      background:#102117;
+      color:#bde3c8;
+    }
+
+    .alert.error{
+      border-color:#5a2a2a;
+      background:#211212;
+      color:#efc3c3;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:18px;
+      text-align:left;
+    }
+
+    .form-grid .full{
+      grid-column:1 / -1;
+    }
+
+    label{
+      display:block;
+      font-size:.88rem;
+      color:var(--muted);
+      margin-bottom:5px;
+    }
+
+    input, textarea{
+      width:100%;
+      background:#0f0f12;
+      border:1px solid var(--border);
+      border-radius:10px;
+      color:var(--text);
+      padding:10px 12px;
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      font-size:.95rem;
+    }
+
+    textarea{
+      min-height:130px;
+      resize:vertical;
+      line-height:1.55;
+    }
+
+    input:focus, textarea:focus{
+      outline:none;
+      border-color:#4a4a4f;
+    }
+
     .contact{
       max-width:700px;
       margin:60px auto 20px;
@@ -210,6 +272,10 @@
       .panel{
         padding:26px;
       }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
@@ -235,6 +301,13 @@
       </p>
     </header>
 
+    <% if (success) { %>
+      <div class="alert success"><%= success %></div>
+    <% } %>
+    <% if (error) { %>
+      <div class="alert error"><%= error %></div>
+    <% } %>
+
     <section class="credibility">
       <h2>Search, guided by judgment</h2>
       <p>
@@ -257,11 +330,44 @@
       <div style="max-width:640px;margin:0 auto;text-align:center;">
         <h2>Candidate Application</h2>
         <p style="color:var(--muted);">
-          Application for quantitative professionals. Reviewed carefully - we reach out when there is strong alignment.
+          Register your profile for quantitative opportunities across finance, risk, and analytics.
         </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbzWTxOzwmf8WSzAg_OxVPrQ3sTBWlSiywlkKH3VjgUNZbZQ/viewform?usp=header" target="_blank" rel="noreferrer">
-          <button class="cta">Begin Application</button>
-        </a>
+
+        <form class="form-grid" action="/candidates/register" method="post" enctype="multipart/form-data">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required />
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div>
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="text" required />
+          </div>
+
+          <div>
+            <label for="years_of_experience">Years of Experience</label>
+            <input id="years_of_experience" name="years_of_experience" type="number" min="0" required />
+          </div>
+
+          <div class="full">
+            <label for="skills">Skills</label>
+            <textarea id="skills" name="skills" required></textarea>
+          </div>
+
+          <div class="full">
+            <label for="resume">Resume Upload (PDF/DOC/DOCX)</label>
+            <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" required />
+          </div>
+
+          <div class="full" style="text-align:center;">
+            <button class="cta" type="submit">Submit Candidate Registration</button>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -269,11 +375,34 @@
       <div style="max-width:640px;margin:0 auto;text-align:center;">
         <h2>Employer Requirements</h2>
         <p style="color:var(--muted);">
-          For hiring teams seeking quantitative talent.
+          Submit role mandates for quantitative hiring requirements.
         </p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLPBoMo4m3Q7HvUVilG71vOS3ES2FIugJW1qXFRjcLMPR2wg/viewform?usp=header" target="_blank" rel="noreferrer">
-          <button class="cta">Submit Hiring Requirement</button>
-        </a>
+
+        <form class="form-grid" action="/employer/mandate" method="post">
+          <div>
+            <label for="company_name">Company Name</label>
+            <input id="company_name" name="company_name" type="text" required />
+          </div>
+
+          <div>
+            <label for="role_title">Role Title</label>
+            <input id="role_title" name="role_title" type="text" required />
+          </div>
+
+          <div class="full">
+            <label for="location">Location</label>
+            <input id="location" name="location" type="text" required />
+          </div>
+
+          <div class="full">
+            <label for="job_description">Job Description</label>
+            <textarea id="job_description" name="job_description" required></textarea>
+          </div>
+
+          <div class="full" style="text-align:center;">
+            <button class="cta" type="submit">Submit Employer Mandate</button>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -303,4 +432,3 @@
   </script>
 </body>
 </html>
-
