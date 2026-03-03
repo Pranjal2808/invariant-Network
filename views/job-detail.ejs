@@ -81,6 +81,57 @@
       white-space:pre-line;
     }
 
+    .alert{
+      margin:0 0 16px;
+      padding:12px 14px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      font-size:.95rem;
+    }
+
+    .alert.success{
+      border-color:#25593a;
+      background:#102117;
+      color:#bde3c8;
+    }
+
+    .alert.error{
+      border-color:#5a2a2a;
+      background:#211212;
+      color:#efc3c3;
+    }
+
+    .apply-form{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+      align-items:end;
+    }
+
+    .apply-form label{
+      display:block;
+      margin-bottom:6px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+
+    .apply-form input{
+      width:100%;
+      background:#0f0f12;
+      border:1px solid var(--border);
+      border-radius:10px;
+      color:var(--text);
+      padding:10px 12px;
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      font-size:.95rem;
+    }
+
+    .apply-form input:focus{
+      outline:none;
+      border-color:#4a4a4f;
+    }
+
     .apply-btn{
       display:inline-block;
       text-decoration:none;
@@ -90,6 +141,19 @@
       border-radius:10px;
       padding:12px 18px;
       border:none;
+      cursor:pointer;
+    }
+
+    .note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:.87rem;
+    }
+
+    @media(max-width:680px){
+      .apply-form{
+        grid-template-columns:1fr;
+      }
     }
   </style>
 </head>
@@ -101,12 +165,26 @@
     </div>
 
     <section class="card">
+      <% if (success) { %>
+        <div class="alert success"><%= success %></div>
+      <% } %>
+      <% if (error) { %>
+        <div class="alert error"><%= error %></div>
+      <% } %>
+
       <h1><%= job.title %></h1>
       <p class="meta"><%= job.company %> | <%= job.location %></p>
       <p class="description"><%= job.description %></p>
-      <a class="apply-btn" href="/">Apply</a>
+
+      <form class="apply-form" action="/jobs/<%= job.id %>/apply" method="post">
+        <div>
+          <label for="candidate_email">Registered Candidate Email</label>
+          <input id="candidate_email" name="candidate_email" type="email" required />
+        </div>
+        <button class="apply-btn" type="submit">Apply</button>
+      </form>
+      <p class="note">If you are not registered yet, complete candidate registration on the home page first.</p>
     </section>
   </main>
 </body>
 </html>
-
