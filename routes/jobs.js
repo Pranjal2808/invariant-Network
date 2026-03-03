@@ -1,7 +1,13 @@
 const express = require("express");
+const path = require("path");
 const { getAllJobs, getJobById } = require("../models/jobModel");
 const { getCandidateByEmail } = require("../models/candidateModel");
-const { createApplication } = require("../models/applicationModel");
+const {
+  createApplication,
+  updateApplicationAiResult,
+} = require("../models/applicationModel");
+const { extractResumeText } = require("../services/resumeText");
+const { scoreCandidateForJob } = require("../services/openai");
 
 const router = express.Router();
 
@@ -64,10 +70,29 @@ router.post("/:id/apply", async (req, res, next) => {
       return;
     }
 
-    await createApplication({
+    const createdApplication = await createApplication({
       candidateId: candidate.id,
       jobId,
     });
+
+    try {
+      const resumeAbsolutePath = path.join(__dirname, "..", candidate.resume_path);
+      const resumeText = await extractResumeText(resumeAbsolutePath);
+      const aiResult = await scoreCandidateForJob({
+        jobDescription: job.description,
+        resumeText,
+      });
+
+      if (aiResult) {
+        await updateApplicationAiResult({
+          applicationId: createdApplication.id,
+          aiScore: aiResult.score,
+          aiSummary: aiResult.summary,
+        });
+      }
+    } catch (aiError) {
+      console.error("AI evaluation error:", aiError);
+    }
 
     res.redirect(`/jobs/${jobId}?success=Application submitted successfully.`);
   } catch (error) {
