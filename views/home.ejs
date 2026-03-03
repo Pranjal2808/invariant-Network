@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8D0V4X1CBM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-8D0V4X1CBM");
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invariant Network - Quantitative Talent</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root{
+      --bg:#0a0a0c;
+      --card:#141417;
+      --border:#27272a;
+      --text:#e4e4e7;
+      --muted:#9ca3af;
+      --accent:#ffffff;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.75;
+    }
+
+    .container{
+      max-width:920px;
+      margin:0 auto;
+      padding:64px 22px;
+    }
+
+    .top-row{
+      display:flex;
+      justify-content:flex-end;
+      margin-bottom:20px;
+    }
+
+    .jobs-link{
+      color:var(--text);
+      text-decoration:none;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:10px 14px;
+      font-size:.9rem;
+    }
+
+    .jobs-link:hover{
+      border-color:#3a3a3a;
+    }
+
+    .logo-container{
+      text-align:center;
+      margin-bottom:28px;
+      padding-top:20px;
+    }
+
+    .logo-svg{
+      max-width:280px;
+      height:auto;
+    }
+
+    header{
+      text-align:center;
+      margin-bottom:48px;
+    }
+
+    .subtitle{
+      color:var(--muted);
+      max-width:640px;
+      margin:0 auto;
+      font-size:1.05rem;
+    }
+
+    .credibility{
+      max-width:700px;
+      margin:0 auto 56px;
+      padding:34px;
+      background:linear-gradient(180deg,#151518,#111113);
+      border:1px solid var(--border);
+      border-radius:16px;
+      text-align:center;
+    }
+
+    .credibility h2{
+      margin-bottom:18px;
+      letter-spacing:-0.02em;
+      font-size:1.45rem;
+    }
+
+    .credibility p{
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+
+    .tabs{
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      margin-bottom:32px;
+    }
+
+    .tab{
+      padding:12px 26px;
+      border-radius:8px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+      font-weight:500;
+      transition:.2s;
+    }
+
+    .tab:hover{
+      border-color:#3a3a3a;
+    }
+
+    .tab.active{
+      background:var(--accent);
+      color:#000;
+    }
+
+    .panel{
+      display:none;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:40px;
+    }
+
+    .panel.active{
+      display:block;
+    }
+
+    .cta{
+      margin-top:24px;
+      padding:14px 30px;
+      font-weight:600;
+      border-radius:10px;
+      border:none;
+      background:white;
+      color:black;
+      cursor:pointer;
+      transition:.2s;
+    }
+
+    .cta:hover{
+      transform:translateY(-2px);
+    }
+
+    .contact{
+      max-width:700px;
+      margin:60px auto 20px;
+      padding:28px;
+      background:linear-gradient(180deg,#151518,#111113);
+      border:1px solid var(--border);
+      border-radius:16px;
+      text-align:center;
+    }
+
+    .contact h2{
+      margin-bottom:12px;
+      letter-spacing:-0.02em;
+    }
+
+    .contact p{
+      color:var(--muted);
+      margin:6px 0;
+    }
+
+    .contact a{
+      color:var(--text);
+      text-decoration:none;
+      font-weight:500;
+    }
+
+    .contact a:hover{
+      text-decoration:underline;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:40px;
+      font-size:.8rem;
+      color:var(--muted);
+      opacity:.6;
+    }
+
+    @media(max-width:600px){
+      .logo-svg{
+        max-width:240px;
+      }
+
+      .panel{
+        padding:26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <div class="top-row">
+      <a class="jobs-link" href="/jobs">View Opportunities</a>
+    </div>
+
+    <div class="logo-container">
+      <svg class="logo-svg" width="280" height="70" viewBox="0 0 280 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="10" width="6" height="50" fill="#ffffff" />
+        <path d="M 20 10 L 20 60 M 20 10 L 50 60 M 50 10 L 50 60" stroke="#ffffff" stroke-width="6" />
+        <text x="70" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#ffffff">INVARIANT</text>
+        <text x="70" y="57" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#666">NETWORK</text>
+      </svg>
+    </div>
+
+    <header>
+      <p class="subtitle">
+        A selective network for quantitative talent spanning financial risk, quant finance, data science, and advanced analytics.
+      </p>
+    </header>
+
+    <section class="credibility">
+      <h2>Search, guided by judgment</h2>
+      <p>
+        Invariant Network is built by professionals from quantitative and analytical backgrounds who understand the rigor these roles demand.
+      </p>
+      <p>
+        Every candidate is assessed in depth, with close attention to the quality of their work and readiness for demanding environments.
+      </p>
+      <p>
+        We are intentionally selective, and introductions are made only when there is clear alignment.
+      </p>
+    </section>
+
+    <div class="tabs">
+      <button class="tab active" onclick="showPanel('candidate', this)">Candidate Application</button>
+      <button class="tab" onclick="showPanel('employer', this)">Employer Requirements</button>
+    </div>
+
+    <section id="candidate" class="panel active">
+      <div style="max-width:640px;margin:0 auto;text-align:center;">
+        <h2>Candidate Application</h2>
+        <p style="color:var(--muted);">
+          Application for quantitative professionals. Reviewed carefully - we reach out when there is strong alignment.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbzWTxOzwmf8WSzAg_OxVPrQ3sTBWlSiywlkKH3VjgUNZbZQ/viewform?usp=header" target="_blank" rel="noreferrer">
+          <button class="cta">Begin Application</button>
+        </a>
+      </div>
+    </section>
+
+    <section id="employer" class="panel">
+      <div style="max-width:640px;margin:0 auto;text-align:center;">
+        <h2>Employer Requirements</h2>
+        <p style="color:var(--muted);">
+          For hiring teams seeking quantitative talent.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLPBoMo4m3Q7HvUVilG71vOS3ES2FIugJW1qXFRjcLMPR2wg/viewform?usp=header" target="_blank" rel="noreferrer">
+          <button class="cta">Submit Hiring Requirement</button>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Email:
+        <a href="mailto:contact@invariantnetwork.com">contact@invariantnetwork.com</a>
+      </p>
+      <p>Phone:
+        <a href="tel:+918976309787">+91 8976309787</a>
+      </p>
+    </section>
+
+    <footer>
+      Copyright 2026 Invariant Network | Independent initiative | Confidential submissions
+    </footer>
+  </main>
+
+  <script>
+    function showPanel(panelId, button){
+      document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+
+      document.getElementById(panelId).classList.add("active");
+      button.classList.add("active");
+    }
+  </script>
+</body>
+</html>
+
