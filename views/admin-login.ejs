@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login - Invariant Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root{
+      --bg:#0a0a0c;
+      --card:#141417;
+      --border:#27272a;
+      --text:#e4e4e7;
+      --muted:#9ca3af;
+      --accent:#ffffff;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      padding:20px;
+    }
+    .card{
+      width:100%;
+      max-width:430px;
+      background:linear-gradient(180deg,#151518,#111113);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:24px;
+    }
+    h1{
+      margin:0 0 8px;
+      font-size:1.4rem;
+      letter-spacing:-0.01em;
+    }
+    p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+    label{
+      display:block;
+      margin-bottom:6px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    input{
+      width:100%;
+      background:#0f0f12;
+      border:1px solid var(--border);
+      border-radius:10px;
+      color:var(--text);
+      padding:11px 12px;
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+    }
+    .btn{
+      margin-top:14px;
+      width:100%;
+      background:var(--accent);
+      color:#000;
+      border:none;
+      border-radius:10px;
+      padding:11px 14px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .error{
+      margin-top:12px;
+      border:1px solid #5a2a2a;
+      background:#211212;
+      color:#efc3c3;
+      border-radius:10px;
+      padding:10px 12px;
+      font-size:.92rem;
+    }
+    a{
+      color:var(--text);
+      font-size:.88rem;
+      display:inline-block;
+      margin-top:12px;
+      opacity:.85;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Admin Access</h1>
+    <p>Password-protected access for Invariant Network administration.</p>
+    <form action="/admin/login" method="post">
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" required />
+      <button class="btn" type="submit">Login</button>
+    </form>
+    <% if (error) { %>
+      <div class="error"><%= error %></div>
+    <% } %>
+    <a href="/">Back to Home</a>
+  </main>
+</body>
+</html>
+

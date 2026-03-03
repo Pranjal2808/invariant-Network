@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const session = require("express-session");
 require("dotenv").config();
 
 const { initSchema } = require("./models/schema");
@@ -18,6 +19,17 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || "invariant-network-dev-secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 8,
+    },
+  })
+);
 
 app.use("/", homeRoutes);
 app.use("/jobs", jobsRoutes);
@@ -25,6 +37,11 @@ app.use("/admin", adminRoutes);
 
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
+});
+
+app.use((err, req, res, next) => {
+  console.error("Unhandled error:", err);
+  res.status(500).send("Internal server error.");
 });
 
 async function startServer() {

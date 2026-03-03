@@ -8,6 +8,17 @@ async function getAllJobs() {
   );
 }
 
+async function getJobsWithApplicationCount() {
+  return all(
+    `SELECT j.id, j.title, j.company, j.location, j.description, j.created_at,
+            COUNT(a.id) AS application_count
+     FROM jobs j
+     LEFT JOIN applications a ON a.job_id = j.id
+     GROUP BY j.id
+     ORDER BY j.created_at DESC, j.id DESC`
+  );
+}
+
 async function getJobById(id) {
   return get(
     `SELECT id, title, company, location, description, created_at
@@ -83,8 +94,8 @@ async function seedDefaultJobs() {
 
 module.exports = {
   getAllJobs,
+  getJobsWithApplicationCount,
   getJobById,
   createJob,
   seedDefaultJobs,
 };
-
