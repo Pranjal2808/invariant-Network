@@ -3,6 +3,7 @@ const express = require("express");
 require("dotenv").config();
 
 const { initSchema } = require("./models/schema");
+const { seedDefaultJobs } = require("./models/jobModel");
 const homeRoutes = require("./routes/home");
 const jobsRoutes = require("./routes/jobs");
 const adminRoutes = require("./routes/admin");
@@ -27,6 +28,7 @@ app.get("/health", (req, res) => {
 
 async function startServer() {
   await initSchema();
+  await seedDefaultJobs();
 
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invariant Network - Jobs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root{
+      --bg:#0a0a0c;
+      --card:#141417;
+      --border:#27272a;
+      --text:#e4e4e7;
+      --muted:#9ca3af;
+      --accent:#ffffff;
+    }
+
+    *{box-sizing:border-box;}
+
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    .container{
+      max-width:1020px;
+      margin:0 auto;
+      padding:56px 22px 70px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+
+    .topbar a{
+      color:var(--text);
+      text-decoration:none;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:10px 14px;
+      font-size:.92rem;
+    }
+
+    .topbar a:hover{
+      border-color:#3a3a3a;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:1.95rem;
+      letter-spacing:-0.02em;
+    }
+
+    .subtitle{
+      margin:0 0 28px;
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .jobs{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:16px;
+    }
+
+    .job-card{
+      background:linear-gradient(180deg,#151518,#111113);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:22px;
+      display:flex;
+      flex-direction:column;
+      min-height:240px;
+    }
+
+    .job-card h2{
+      margin:0 0 8px;
+      font-size:1.15rem;
+      letter-spacing:-0.01em;
+    }
+
+    .meta{
+      margin:0 0 14px;
+      color:var(--muted);
+      font-size:.94rem;
+    }
+
+    .desc{
+      margin:0 0 18px;
+      flex:1;
+      color:var(--text);
+      opacity:.92;
+    }
+
+    .btn{
+      align-self:flex-start;
+      text-decoration:none;
+      background:var(--accent);
+      color:#000;
+      font-weight:600;
+      border-radius:10px;
+      padding:11px 16px;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .empty{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:18px;
+      color:var(--muted);
+    }
+
+    @media(max-width:860px){
+      .jobs{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="topbar">
+      <strong>Invariant Network</strong>
+      <a href="/">Back to Home</a>
+    </div>
+
+    <h1>Open Quantitative Roles</h1>
+    <p class="subtitle">
+      Opportunities across quantitative finance, model risk, quantitative development, and advanced analytics.
+    </p>
+
+    <% if (!jobs.length) { %>
+      <div class="empty">No jobs are available right now.</div>
+    <% } %>
+
+    <section class="jobs">
+      <% jobs.forEach((job) => { %>
+        <article class="job-card">
+          <h2><%= job.title %></h2>
+          <p class="meta"><%= job.company %> | <%= job.location %></p>
+          <p class="desc"><%= job.description.slice(0, 150) %><%= job.description.length > 150 ? "..." : "" %></p>
+          <a class="btn" href="/jobs/<%= job.id %>">View Details</a>
+        </article>
+      <% }) %>
+    </section>
+  </main>
+</body>
+</html>
+
