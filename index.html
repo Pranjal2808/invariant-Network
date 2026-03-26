@@ -7,167 +7,379 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-8D0V4X1CBM');
 </script>
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Invariant Network — Quantitative Talent</title>
+<title>Invariant Network - Quantitative Recruitment for Financial Services</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
---bg:#0a0a0c;
---card:#141417;
---border:#27272a;
---text:#e4e4e7;
---muted:#9ca3af;
---accent:#ffffff;
+--bg:#fafafa;
+--card:#ffffff;
+--border:#e5e5e5;
+--text:#171717;
+--text-light:#525252;
+--text-muted:#737373;
+--accent:#0066ff;
+--accent-hover:#0052cc;
+--success:#10b981;
 }
 
-*{box-sizing:border-box;}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
 
 body{
 margin:0;
-font-family:Inter,system-ui,-apple-system,sans-serif;
+font-family:'Inter',system-ui,-apple-system,sans-serif;
 background:var(--bg);
 color:var(--text);
-line-height:1.75;
+line-height:1.7;
+-webkit-font-smoothing:antialiased;
 }
 
 .container{
-max-width:920px;
+max-width:1000px;
 margin:0 auto;
-padding:64px 22px;
+padding:80px 32px;
 }
 
+/* Logo */
 .logo-container{
 text-align:center;
-margin-bottom:28px;
-padding-top:20px;
+margin-bottom:48px;
+padding-top:32px;
 }
 
 .logo-svg{
-max-width:280px;
+max-width:300px;
 height:auto;
 }
 
+/* Header */
 header{
+text-align:center;
+margin-bottom:80px;
+max-width:750px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.tagline{
+font-size:2.25rem;
+font-weight:700;
+line-height:1.2;
+letter-spacing:-0.03em;
+margin-bottom:20px;
+}
+
+.subtitle{
+font-size:1.15rem;
+color:var(--text-light);
+line-height:1.6;
+}
+
+/* Section */
+.section{
+max-width:850px;
+margin:0 auto 80px;
+}
+
+.section-header{
 text-align:center;
 margin-bottom:48px;
 }
 
-.subtitle{
-color:var(--muted);
-max-width:640px;
-margin:0 auto;
-font-size:1.05rem;
+.section-header h2{
+font-size:1.85rem;
+font-weight:700;
+letter-spacing:-0.02em;
+margin-bottom:8px;
 }
 
-.credibility{
-max-width:700px;
-margin:0 auto 56px;
-padding:34px;
-background:linear-gradient(180deg,#151518,#111113);
+.section-header p{
+font-size:1rem;
+color:var(--text-muted);
+}
+
+/* Content Card */
+.content-card{
+background:var(--card);
 border:1px solid var(--border);
 border-radius:16px;
-text-align:center;
+padding:48px;
+box-shadow:0 1px 3px rgba(0,0,0,0.04);
 }
 
-.credibility h2{
-margin-bottom:18px;
-letter-spacing:-0.02em;
-font-size:1.45rem;
+.content-card p{
+font-size:1.05rem;
+line-height:1.75;
+color:var(--text-light);
+margin-bottom:20px;
 }
 
-.credibility p{
-color:var(--muted);
+.content-card p:last-child{
+margin-bottom:0;
+}
+
+.content-card strong{
+color:var(--text);
+font-weight:600;
+}
+
+/* Role Cards */
+.roles-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:24px;
+margin-top:40px;
+}
+
+.role-card{
+background:linear-gradient(135deg,#f8f9fa 0%,#fff 100%);
+border:1px solid var(--border);
+border-radius:12px;
+padding:28px;
+transition:all 0.3s ease;
+}
+
+.role-card:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(0,0,0,0.06);
+border-color:var(--accent);
+}
+
+.role-card h3{
+font-size:1.1rem;
+font-weight:600;
 margin-bottom:16px;
+}
+
+.role-card ul{
+list-style:none;
+padding:0;
+}
+
+.role-card li{
+padding-left:20px;
+margin-bottom:10px;
+position:relative;
+color:var(--text-light);
+font-size:0.95rem;
+}
+
+.role-card li:before{
+content:'✓';
+position:absolute;
+left:0;
+color:var(--success);
+font-weight:600;
+}
+
+/* Process Steps */
+.process-steps{
+margin-top:40px;
+}
+
+.process-step{
+display:flex;
+gap:24px;
+margin-bottom:32px;
+background:var(--card);
+border:1px solid var(--border);
+border-radius:14px;
+padding:28px;
+transition:all 0.3s ease;
+box-shadow:0 1px 2px rgba(0,0,0,0.03);
+}
+
+.process-step:hover{
+box-shadow:0 6px 16px rgba(0,0,0,0.07);
+transform:translateY(-1px);
+}
+
+.step-number{
+min-width:44px;
+height:44px;
+background:linear-gradient(135deg,var(--accent),var(--accent-hover));
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:1.2rem;
+font-weight:700;
+color:#fff;
+flex-shrink:0;
+}
+
+.step-content h3{
+font-size:1.1rem;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.step-content p{
+color:var(--text-light);
+line-height:1.7;
+margin:0;
+font-size:0.98rem;
+}
+
+/* Grid Section */
+.value-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+gap:20px;
+margin-top:40px;
+}
+
+.value-item{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:12px;
+padding:28px;
+text-align:center;
+transition:all 0.3s ease;
+box-shadow:0 1px 2px rgba(0,0,0,0.03);
+}
+
+.value-item:hover{
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(0,0,0,0.07);
+border-color:var(--accent);
+}
+
+.value-icon{
+font-size:2.2rem;
+margin-bottom:16px;
+}
+
+.value-item h3{
+font-size:1.05rem;
+font-weight:600;
+margin-bottom:10px;
+}
+
+.value-item p{
+color:var(--text-light);
+font-size:0.92rem;
+line-height:1.6;
+}
+
+/* Tabs */
+.tabs-section{
+max-width:850px;
+margin:0 auto 60px;
 }
 
 .tabs{
 display:flex;
 justify-content:center;
-gap:12px;
-margin-bottom:32px;
+gap:8px;
+margin-bottom:28px;
+background:var(--card);
+padding:6px;
+border-radius:10px;
+border:1px solid var(--border);
+box-shadow:0 1px 2px rgba(0,0,0,0.03);
 }
 
 .tab{
-padding:12px 26px;
+padding:10px 28px;
 border-radius:8px;
-border:1px solid var(--border);
+border:none;
 background:transparent;
-color:var(--text);
+color:var(--text-light);
 cursor:pointer;
 font-weight:500;
-transition:.2s;
+font-size:0.95rem;
+transition:all 0.2s ease;
 }
 
 .tab:hover{
-border-color:#3a3a3a;
+background:var(--bg);
+color:var(--text);
 }
 
 .tab.active{
 background:var(--accent);
-color:#000;
+color:#fff;
+box-shadow:0 2px 6px rgba(0,102,255,0.2);
 }
 
 .panel{
 display:none;
 background:var(--card);
 border:1px solid var(--border);
-border-radius:18px;
+border-radius:14px;
 padding:40px;
+box-shadow:0 1px 2px rgba(0,0,0,0.03);
 }
 
 .panel.active{
 display:block;
 }
 
+.panel h2{
+font-size:1.4rem;
+font-weight:600;
+margin-bottom:10px;
+}
+
 .cta{
 margin-top:24px;
-padding:14px 30px;
+padding:14px 36px;
 font-weight:600;
+font-size:0.98rem;
 border-radius:10px;
 border:none;
-background:white;
-color:black;
+background:var(--accent);
+color:#fff;
 cursor:pointer;
-transition:.2s;
+transition:all 0.3s ease;
+box-shadow:0 4px 10px rgba(0,102,255,0.2);
 }
 
 .cta:hover{
+background:var(--accent-hover);
 transform:translateY(-2px);
+box-shadow:0 6px 16px rgba(0,102,255,0.3);
 }
 
+/* Contact */
 .contact{
-max-width:700px;
-margin:60px auto 20px;
-padding:28px;
-background:linear-gradient(180deg,#151518,#111113);
+max-width:650px;
+margin:60px auto 30px;
+padding:36px;
+background:var(--card);
 border:1px solid var(--border);
-border-radius:16px;
+border-radius:14px;
 text-align:center;
+box-shadow:0 1px 2px rgba(0,0,0,0.03);
 }
 
 .contact h2{
-margin-bottom:12px;
-letter-spacing:-0.02em;
+font-size:1.4rem;
+font-weight:600;
+margin-bottom:20px;
 }
 
 .contact p{
-color:var(--muted);
-margin:6px 0;
+color:var(--text-light);
+margin:10px 0;
+font-size:1.02rem;
 }
 
 .contact a{
-color:var(--text);
+color:var(--accent);
 text-decoration:none;
 font-weight:500;
 }
@@ -178,24 +390,52 @@ text-decoration:underline;
 
 footer{
 text-align:center;
-margin-top:40px;
-font-size:.8rem;
-color:var(--muted);
-opacity:.6;
+margin-top:60px;
+padding-top:28px;
+border-top:1px solid var(--border);
+font-size:0.88rem;
+color:var(--text-muted);
 }
 
-@media(max-width:600px){
+/* Mobile */
+@media(max-width:640px){
+.container{
+padding:50px 20px;
+}
 
 .logo-svg{
-max-width:240px;
+max-width:250px;
+}
+
+.tagline{
+font-size:1.75rem;
+}
+
+.subtitle{
+font-size:1.05rem;
+}
+
+.content-card{
+padding:32px 24px;
+}
+
+.roles-grid,
+.value-grid{
+grid-template-columns:1fr;
 }
 
 .panel{
-padding:26px;
+padding:28px 20px;
 }
 
+.tabs{
+flex-direction:column;
 }
 
+.tab{
+width:100%;
+}
+}
 </style>
 </head>
 
@@ -203,127 +443,178 @@ padding:26px;
 
 <main class="container">
 
+<!-- Logo -->
 <div class="logo-container">
-<svg class="logo-svg" width="280" height="70" viewBox="0 0 280 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect x="0" y="10" width="6" height="50" fill="#ffffff"/>
-<path d="M 20 10 L 20 60 M 20 10 L 50 60 M 50 10 L 50 60" stroke="#ffffff" stroke-width="6"/>
-<text x="70" y="40" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#ffffff">INVARIANT</text>
-<text x="70" y="57" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#666">NETWORK</text>
+<svg class="logo-svg" width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0" y="15" width="6" height="50" fill="#171717"/>
+<path d="M 22 15 L 22 65 M 22 15 L 52 65 M 52 15 L 52 65" stroke="#171717" stroke-width="6"/>
+<text x="72" y="46" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#171717" letter-spacing="-1">INVARIANT</text>
+<text x="72" y="64" font-family="Inter, sans-serif" font-size="12" font-weight="500" fill="#737373" letter-spacing="1">NETWORK</text>
 </svg>
 </div>
 
+<!-- Header -->
 <header>
+<h1 class="tagline">
+Quantitative recruitment by people who've actually done the work
+</h1>
 <p class="subtitle">
-A selective network for quantitative talent spanning financial risk, quant finance, data science, and advanced analytics.
+We help financial institutions hire quant and data science professionals who have the depth and rigor to succeed in demanding roles.
 </p>
 </header>
 
-<section class="credibility">
+<!-- Who We Are -->
+<section class="section">
+<div class="section-header">
+<h2>Who We Are & What We Do</h2>
+</div>
 
-<h2>Search, guided by judgment</h2>
+<div class="content-card">
+<p><strong>Who we are:</strong> We're quantitative professionals who became recruiters, not recruiters who learned keywords. We can assess technical depth because we've done the work ourselves.</p>
 
-<p>
-Invariant Network is built by professionals from quantitative and analytical backgrounds who understand the rigor these roles demand.
-</p>
+<p><strong>What makes us different:</strong> Most recruiters send you 50 resumes and hope something sticks. We conduct technical assessments ourselves. We can evaluate derivatives pricing knowledge, statistics, and problem-solving ability because we understand the math and code. Every candidate goes through AI screening, manual review, and our technical phone assessment before you see them. You interview 2 or 3 people who can actually do the work, not a pile of keyword-matched resumes. We also maintain strong networks across Tier 1 institutions like IITs, ISI, CMI, and others, giving us access to exceptional candidates for specialized roles.</p>
 
-<p>
-Every candidate is assessed in depth, with close attention to the quality of their work and readiness for demanding environments.
-</p>
+<p><strong>Our focus:</strong> Quantitative finance and data science roles in banks, fintech companies, and financial institutions only.</p>
 
-<p>
-We are intentionally selective, and introductions are made only when there is clear alignment.
-</p>
+<div class="roles-grid">
+<div class="role-card">
+<h3>Quantitative Finance</h3>
+<p style="color:var(--text-light);margin:0;">Derivatives pricing, model risk, algorithmic trading, quantitative research, and related quant roles.</p>
+</div>
 
+<div class="role-card">
+<h3>Data Science for Finance</h3>
+<p style="color:var(--text-light);margin:0;">Credit risk, fraud detection, customer analytics, and other ML applications in financial services.</p>
+</div>
+</div>
+</div>
 </section>
+
+<!-- For Hiring Teams -->
+<section class="section">
+<div class="section-header">
+<h2>For Hiring Teams</h2>
+</div>
+
+<div class="process-steps">
+
+<div class="process-step">
+<div class="step-number">1</div>
+<div class="step-content">
+<h3>Understand Requirements</h3>
+<p>Quick call to understand your role, technical expectations, and team culture.</p>
+</div>
+</div>
+
+<div class="process-step">
+<div class="step-number">2</div>
+<div class="step-content">
+<h3>Three Stage Filtering Process</h3>
+<p><strong>Stage 1:</strong> AI screens resumes for relevant experience and skills.<br>
+<strong>Stage 2:</strong> We manually review each resume to assess depth of experience, quality of past work, career progression, and genuine alignment with your role requirements.<br>
+<strong>Stage 3:</strong> Technical phone screen conducted by us. We assess actual theoretical and implementation understanding, not just buzzword knowledge.</p>
+</div>
+</div>
+
+<div class="process-step">
+<div class="step-number">3</div>
+<div class="step-content">
+<h3>You Interview 2 or 3 Qualified Candidates</h3>
+<p>We present prevetted candidates with our assessment notes. We also help them prepare by guiding them on what specific topics to revise, so they perform better in your interviews. We handle all scheduling and coordination.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- For Candidates -->
+<section class="section">
+<div class="section-header">
+<h2>For Candidates</h2>
+</div>
+
+<div class="value-grid">
+
+<div class="value-item">
+<div class="value-icon">💬</div>
+<h3>Technical Assessment</h3>
+<p>We evaluate your technical depth through real conversations about your work, not generic HR questions. Only present you where you'll succeed.</p>
+</div>
+
+<div class="value-item">
+<div class="value-icon">📚</div>
+<h3>Real Interview Prep</h3>
+<p>We guide you on exactly what technical topics to revise: derivatives pricing, time series, ML algorithms, whatever the role requires. We can do this because we understand the content. We don't give generic advice, just actual guidance on what to revise.</p>
+</div>
+
+<div class="value-item">
+<div class="value-icon">✓</div>
+<h3>Full Support</h3>
+<p>Regular updates throughout. Feedback after rounds. Never left wondering.</p>
+</div>
+
+</div>
+</section>
+
+<!-- Forms -->
+<section class="tabs-section">
 
 <div class="tabs">
 <button class="tab active" onclick="showPanel('candidate',this)">
-Candidate Application
+For Candidates
 </button>
 
 <button class="tab" onclick="showPanel('employer',this)">
-Employer Requirements
+For Employers
 </button>
 </div>
-
-<!-- Candidate -->
 
 <section id="candidate" class="panel active">
-
-<div style="max-width:640px;margin:0 auto;text-align:center;">
-
+<div style="max-width:600px;margin:0 auto;text-align:center;">
 <h2>Candidate Application</h2>
-
-<p style="color:var(--muted);">
-Application for quantitative professionals. Reviewed carefully and we reach out when there's strong alignment.
+<p style="color:var(--text-light);">
+For quant and data science professionals. We review carefully and reach out when there's a match.
 </p>
-
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbzWTxOzwmf8WSzAg_OxVPrQ3sTBWlSiywlkKH3VjgUNZbZQ/viewform?usp=header" target="_blank">
-<button class="cta">
-Begin Application
-</button>
+<button class="cta">Apply</button>
 </a>
-
 </div>
-
 </section>
-
-<!-- Employer -->
 
 <section id="employer" class="panel">
-
-<div style="max-width:640px;margin:0 auto;text-align:center;">
-
-<h2>Employer Requirements</h2>
-
-<p style="color:var(--muted);">
-For hiring teams seeking quantitative talent.
+<div style="max-width:600px;margin:0 auto;text-align:center;">
+<h2>Hiring Requirement</h2>
+<p style="color:var(--text-light);">
+Tell us what you're looking for and we'll find the right people.
 </p>
-
 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfLPBoMo4m3Q7HvUVilG71vOS3ES2FIugJW1qXFRjcLMPR2wg/viewform?usp=header" target="_blank">
-<button class="cta">
-Submit Hiring Requirement
-</button>
+<button class="cta">Submit Requirement</button>
 </a>
-
 </div>
+</section>
 
 </section>
 
+<!-- Contact -->
 <section class="contact">
-
 <h2>Contact</h2>
-
-<p>Email:  
-<a href="mailto:contact@invariantnetwork.com">
-contact@invariantnetwork.com
-</a>
-</p>
-
-<p>Phone:  
-<a href="tel:+918976309787">
-+91 8976309787
-</a>
-</p>
-
+<p>Email: <a href="/cdn-cgi/l/email-protection#45262a2b31242631052c2b3324372c242b312b2031322a372e6b262a28"><span class="__cf_email__" data-cfemail="89eae6e7fde8eafdc9e0e7ffe8fbe0e8e7fde7ecfdfee6fbe2a7eae6e4">[email&#160;protected]</span></a></p>
+<p>Phone: <a href="tel:+918976309787">+91 8976309787</a></p>
 </section>
 
 <footer>
-© 2026 Invariant Network · Independent initiative · Confidential submissions
+© 2026 Invariant Network
 </footer>
 
 </main>
 
-<script>
-
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function showPanel(panelId,button){
 document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
 document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-
 document.getElementById(panelId).classList.add('active');
 button.classList.add('active');
 }
-
 </script>
 
 </body>
